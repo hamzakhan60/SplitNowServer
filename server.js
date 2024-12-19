@@ -9,10 +9,10 @@ app.use(bodyParser.json());
 
 // Nodemailer Transport Configuration
 const transporter = nodemailer.createTransport({
-  service: "Gmail", // You can use another service like Outlook, Yahoo, etc.
+  service: "gmail", // You can use another service like Outlook, Yahoo, etc.
   auth: {
     user: "hghauri30@gmail.com", // Your email address
-    pass: "ghauri@30#", // Your email password or App Password
+    pass: "mjcstuoeoowgcdom ", // Your email password or App Password
   },
 });
 
@@ -20,6 +20,8 @@ const transporter = nodemailer.createTransport({
 app.post("/send-email", async (req, res) => {
   try {
     const { user_email, subject, message } = req.body;
+    console.log(user_email);
+    
 
     // Sending email
     const mailOptions = {
