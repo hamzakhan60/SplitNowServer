@@ -1,9 +1,12 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
+const cors = require("cors");   
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+app.use(cors()); 
 
 app.use(bodyParser.json());
 
@@ -21,7 +24,7 @@ app.post("/send-email", async (req, res) => {
   try {
     const { user_email, subject, message } = req.body;
     console.log(user_email);
-    
+
 
     // Sending email
     const mailOptions = {
